@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+	<record model="ir.ui.view" id="account_check_form_view_sba">
+	    <field name="name">account.check.form.sba.inherit</field>
+	    <field name="model">account.check</field>
+	    <field name="inherit_id" ref="account_check.view_account_check_form"/>
+	    <field name="arch" type="xml">
+	        <data>
+			<field name="number" position="after">
+				<field name="warehouse_id" /> 
+			</field>
+		</data>
+	    </field>
+	</record>
+
+	<record model="ir.ui.view" id="account_check_tree_view_sba">
+	    <field name="name">account.check.tree.sba.inherit</field>
+	    <field name="model">account.check</field>
+	    <field name="inherit_id" ref="account_check.view_account_check_tree"/>
+	    <field name="arch" type="xml">
+	        <data>
+			<field name="name" position="after">
+				<field name="warehouse_id" /> 
+			</field>
+		</data>
+	    </field>
+	</record>
+
+    <record id="view_check_filter_inh" model="ir.ui.view">
+        <field name="name">Third Checks - Search</field>
+        <field name="model">account.check</field>
+        <field name="inherit_id" ref="account_check.view_checks_search" />
+        <field name="arch" type="xml">
+                <xpath expr="//filter[@string='State']" position="after">
+                        <filter string='Warehouse' icon="terp-mrp" domain="[]" context="{'group_by' : 'warehouse_id'}"/>
+                </xpath>
+        </field>
+    </record>
+
+
+    </data>
+</openerp>
