@@ -11,3 +11,13 @@ class account_check(osv.osv):
 	}
  
 account_check()
+
+class account_journal(osv.osv):
+	_name = "account.journal"
+	_inherit = "account.journal"
+
+	_columns = {
+		'print_address': fields.char('Direccion a imprimir',size=64),
+		}
+
+account_journal()

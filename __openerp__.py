@@ -30,7 +30,8 @@
     'depends': ['base','account','account_voucher','account_check'],
     'demo': [],
     # 'data': [],
-    'data': ['account_check_view.xml'],
+    'data': ['account_check_view.xml',
+		'account_view.xml'],
     'test': [],
     'installable': True,
 }
